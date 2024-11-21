@@ -8,9 +8,13 @@
 
 #include "aether/api.h"
 
-namespace aether
+#ifdef __cplusplus
+extern "C"
 {
+#endif
 
-AETHER_API int sum(int x, int y);
+    AETHER_API int sum(int x, int y);
 
-} // namespace aether
+#ifdef __cplusplus
+}
+#endif
