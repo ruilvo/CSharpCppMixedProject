@@ -1,10 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <Target Name="BuildNativeCode"
+            BeforeTargets="Build">
+        <Exec Command="cmake -S ../../native -B ../../native/_build" />
+        <Exec Command="cmake --build ../../native/_build --config Release" />
+        <Message Text="Native code built successfully."
+                 Importance="high" />
+    </Target>
 
 </Project>
