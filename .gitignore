@@ -1,0 +1,7 @@
+### Project-specific ignores ###
+.clangd/
+.cache/
+.VSCodeCounter/
+.scrap/
+_build/
+compile_commands.json
