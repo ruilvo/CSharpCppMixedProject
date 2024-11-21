@@ -5,6 +5,9 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
+    <PropertyGroup>
+        <NativeLibName Condition="'$(RuntimeIdentifier)' == 'win-x64'">bin/aether_lib.dll</NativeLibName>
+    </PropertyGroup>
     <Target Name="BuildNativeCode"
             BeforeTargets="Build">
         <Exec Command="cmake -S ../../native -B ../../native/_build" />
@@ -12,4 +15,10 @@
         <Message Text="Native code built successfully."
                  Importance="high" />
     </Target>
+  <ItemGroup>
+    <None Update="../../native/_build/$(NativeLibName)">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
 </Project>
