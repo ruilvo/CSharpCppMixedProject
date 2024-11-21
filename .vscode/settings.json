@@ -2,6 +2,7 @@
     "cmake.sourceDirectory": "${workspaceFolder}/native",
     "cmake.buildDirectory": "${workspaceFolder}/native/_build",
     "cmake.generator": "Ninja",
+    "cmake.copyCompileCommands": null,
     "cmake.configureSettings": {
         "AETHER_DEVELOPER_MODE": "YES"
     }
