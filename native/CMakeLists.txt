@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
-# SPDX-FileCopyrightText: 2023 Rui Oliveira <ruimail24@gmail.com>
+# SPDX-FileCopyrightText: 2024 Rui Oliveira <ruimail24@gmail.com>
 
 cmake_minimum_required(VERSION 3.23)
 
