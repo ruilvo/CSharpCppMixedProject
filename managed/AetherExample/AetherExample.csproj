@@ -6,7 +6,7 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <PropertyGroup>
-        <NativeLibName Condition="'$(RuntimeIdentifier)' == 'win-x64'">bin/aether_lib.dll</NativeLibName>
+        <NativeLibName Condition="'$(RuntimeIdentifier)' == 'win-x64'">bin\aether_lib.dll</NativeLibName>
         <!-- Add more conditions for other platforms as needed -->
     </PropertyGroup>
     <Target Name="CheckRuntimeIdentifier" BeforeTargets="Build">
@@ -17,10 +17,6 @@
             DependsOnTargets="CheckRuntimeIdentifier">
         <Exec Command="cmake -S ../../native -B ../../native/_build" />
         <Exec Command="cmake --build ../../native/_build --config Release" />
-        <Message Text="Native code built successfully."
-                 Importance="high" />
-        <Message Text="The native library is located at: ../../native/_build/$(NativeLibName)"
-                 Importance="high" />
     </Target>
   <ItemGroup>
     <None Update="../../native/_build/$(NativeLibName)">
