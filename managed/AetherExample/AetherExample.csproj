@@ -12,5 +12,4 @@
         <Message Text="Native code built successfully."
                  Importance="high" />
     </Target>
-
 </Project>
